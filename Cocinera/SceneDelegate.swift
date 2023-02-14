@@ -7,16 +7,18 @@
 
 import UIKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDelegate {
+    var coordinator: MainCoordinator?
     var window: UIWindow?
 
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+    func scene(_ scene: UIScene,
+               willConnectTo session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
+        guard let windowScene = scene as? UIWindowScene else { fatalError() }
+        window = UIWindow(windowScene: windowScene)
+
+        configureSplitViewController()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -47,6 +49,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    private func configureSplitViewController() {
+        guard let window = window else { fatalError() }
+
+        // Initialize a SplitViewControlelr and Coordinator
+        let splitViewController = UISplitViewController()
+        coordinator = MainCoordinator(splitViewController: splitViewController)
+        coordinator?.start()
+
+        // Setup our SplitViewController
+        splitViewController.preferredDisplayMode = UISplitViewController.DisplayMode.oneBesideSecondary
+        splitViewController.primaryBackgroundStyle = .sidebar
+        splitViewController.delegate = self
+
+        // Set the window to the SplitViewController
+        window.rootViewController = splitViewController
+        window.makeKeyAndVisible()
+
+        // TODO: Add a tint color
+    }
+
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return true
+    }
 
 }
 

@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		56EB57C029938AAD00E1495A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB57BF29938AAD00E1495A /* AppDelegate.swift */; };
 		56EB57C229938AAD00E1495A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB57C129938AAD00E1495A /* SceneDelegate.swift */; };
-		56EB57C429938AAD00E1495A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB57C329938AAD00E1495A /* ViewController.swift */; };
-		56EB57C729938AAD00E1495A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56EB57C529938AAD00E1495A /* Main.storyboard */; };
+		56EB57C429938AAD00E1495A /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB57C329938AAD00E1495A /* SignInController.swift */; };
 		56EB57C929938AAE00E1495A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56EB57C829938AAE00E1495A /* Assets.xcassets */; };
 		56EB57CC29938AAE00E1495A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56EB57CA29938AAE00E1495A /* LaunchScreen.storyboard */; };
+		56EB57D629938C0600E1495A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB57D529938C0600E1495A /* Coordinator.swift */; };
+		56EB57D829938C4E00E1495A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB57D729938C4E00E1495A /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		56EB57BC29938AAD00E1495A /* Cocinera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocinera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56EB57BF29938AAD00E1495A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56EB57C129938AAD00E1495A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		56EB57C329938AAD00E1495A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		56EB57C629938AAD00E1495A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		56EB57C329938AAD00E1495A /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		56EB57C829938AAE00E1495A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56EB57CB29938AAE00E1495A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56EB57CD29938AAE00E1495A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56EB57D529938C0600E1495A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		56EB57D729938C4E00E1495A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,32 @@
 		56EB57BE29938AAD00E1495A /* Cocinera */ = {
 			isa = PBXGroup;
 			children = (
+				56EB57D429938B7200E1495A /* Coordinators */,
+				56EB57D329938B6600E1495A /* Protocols */,
 				56EB57BF29938AAD00E1495A /* AppDelegate.swift */,
 				56EB57C129938AAD00E1495A /* SceneDelegate.swift */,
-				56EB57C329938AAD00E1495A /* ViewController.swift */,
-				56EB57C529938AAD00E1495A /* Main.storyboard */,
+				56EB57C329938AAD00E1495A /* SignInController.swift */,
 				56EB57C829938AAE00E1495A /* Assets.xcassets */,
 				56EB57CA29938AAE00E1495A /* LaunchScreen.storyboard */,
 				56EB57CD29938AAE00E1495A /* Info.plist */,
 			);
 			path = Cocinera;
+			sourceTree = "<group>";
+		};
+		56EB57D329938B6600E1495A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				56EB57D529938C0600E1495A /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		56EB57D429938B7200E1495A /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				56EB57D729938C4E00E1495A /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +146,6 @@
 			files = (
 				56EB57CC29938AAE00E1495A /* LaunchScreen.storyboard in Resources */,
 				56EB57C929938AAE00E1495A /* Assets.xcassets in Resources */,
-				56EB57C729938AAD00E1495A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +156,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56EB57C429938AAD00E1495A /* ViewController.swift in Sources */,
+				56EB57D629938C0600E1495A /* Coordinator.swift in Sources */,
+				56EB57C429938AAD00E1495A /* SignInController.swift in Sources */,
 				56EB57C029938AAD00E1495A /* AppDelegate.swift in Sources */,
+				56EB57D829938C4E00E1495A /* MainCoordinator.swift in Sources */,
 				56EB57C229938AAD00E1495A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +167,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		56EB57C529938AAD00E1495A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				56EB57C629938AAD00E1495A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		56EB57CA29938AAE00E1495A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +304,6 @@
 				INFOPLIST_FILE = Cocinera/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +331,6 @@
 				INFOPLIST_FILE = Cocinera/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
