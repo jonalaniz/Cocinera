@@ -11,13 +11,13 @@ class MainCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var splitViewController: UISplitViewController
     
-    let signInController: SignInController
+    let signInController: LoginController
 
     init(splitViewController: UISplitViewController) {
         self.splitViewController = splitViewController
         
         // Initialize our signInController
-        signInController = SignInController()
+        signInController = LoginController()
     }
 
     func start() {
