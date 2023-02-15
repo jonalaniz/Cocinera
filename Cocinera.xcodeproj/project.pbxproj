@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56951B28299D33A100C78F04 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56951B27299D33A100C78F04 /* LoginView.swift */; };
 		56EB57C029938AAD00E1495A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB57BF29938AAD00E1495A /* AppDelegate.swift */; };
 		56EB57C229938AAD00E1495A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB57C129938AAD00E1495A /* SceneDelegate.swift */; };
 		56EB57C429938AAD00E1495A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EB57C329938AAD00E1495A /* LoginController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		56951B27299D33A100C78F04 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		56EB57BC29938AAD00E1495A /* Cocinera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocinera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56EB57BF29938AAD00E1495A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56EB57C129938AAD00E1495A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56951B26299D339100C78F04 /* LoginFlow */ = {
+			isa = PBXGroup;
+			children = (
+				56EB57C329938AAD00E1495A /* LoginController.swift */,
+				56951B27299D33A100C78F04 /* LoginView.swift */,
+			);
+			path = LoginFlow;
+			sourceTree = "<group>";
+		};
 		56EB57B329938AAD00E1495A = {
 			isa = PBXGroup;
 			children = (
@@ -62,7 +73,7 @@
 				56EB57D329938B6600E1495A /* Protocols */,
 				56EB57BF29938AAD00E1495A /* AppDelegate.swift */,
 				56EB57C129938AAD00E1495A /* SceneDelegate.swift */,
-				56EB57C329938AAD00E1495A /* LoginController.swift */,
+				56951B26299D339100C78F04 /* LoginFlow */,
 				56EB57C829938AAE00E1495A /* Assets.xcassets */,
 				56EB57CA29938AAE00E1495A /* LaunchScreen.storyboard */,
 				56EB57CD29938AAE00E1495A /* Info.plist */,
@@ -156,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56951B28299D33A100C78F04 /* LoginView.swift in Sources */,
 				56EB57D629938C0600E1495A /* Coordinator.swift in Sources */,
 				56EB57C429938AAD00E1495A /* LoginController.swift in Sources */,
 				56EB57C029938AAD00E1495A /* AppDelegate.swift in Sources */,
