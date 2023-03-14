@@ -21,16 +21,14 @@ class NXAuthenticator: NSObject {
         Task {
             do {
                 let object = try await dataManager.fetchAuthenticationData(url: url)
-
-                // Begin authenitcaion using recieved object
-                setupAuthenitcationObject(with: object)
+                await setupAuthenitcationObject(with: object)
             } catch {
                 print("Request failed with error: \(error)")
             }
         }
     }
 
-    private func setupAuthenitcationObject(with object: AuthenticationObject) {
+    @MainActor private func setupAuthenitcationObject(with object: AuthenticationObject) {
         // Check for data from authenticationObject
         guard
             let pollURL = URL(string: (object.poll?.endpoint)!),
@@ -42,9 +40,7 @@ class NXAuthenticator: NSObject {
         }
 
         // Notify our delegate of loginURL and begin polling and grab custom image
-        DispatchQueue.main.async {
-            self.delegate?.didRecieve(loginURL: loginURL)
-        }
+        delegate?.didRecieve(loginURL: loginURL)
 
         shouldPoll = true
 

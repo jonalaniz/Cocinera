@@ -13,7 +13,7 @@ class AuthenticationViewController: UIViewController {
     let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(named: "splash")
+        imageView.image = UIImage(named: "back3")
         
         return imageView
     }()
@@ -30,11 +30,13 @@ class AuthenticationViewController: UIViewController {
         super.viewDidLoad()
         arrangeViews()
     }
+
+    override func viewDidLayoutSubviews() {
+        loginView.backgroundViewGradientLayer.frame = loginView.bounds
+        loginView.loginButtonGradientLayer.frame = loginView.loginButton.bounds
+    }
     
     private func arrangeViews() {
-        view.backgroundColor = .black
-        backgroundImageView.alpha = 0.25
-        
         view.addSubview(backgroundImageView)
         view.addSubview(loginView)
 

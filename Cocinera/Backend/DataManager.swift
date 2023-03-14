@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol ErrorHandler: AnyObject {
-    func handle(error type: ErrorType)
-}
-
 enum ErrorType: Error {
     case invalidURL
     // This error being sent should be Error.loaclized description
@@ -28,7 +24,6 @@ class DataManager {
     private init() { }
 
     func fetchAuthenticationData(url: URL) async throws -> AuthenticationObject {
-        // Append Login Flow V2 endpoint and create request
         var components = URLComponents(url: url, resolvingAgainstBaseURL: false)!
         components.path += Endpoints.loginEndpoint.rawValue
 
@@ -49,7 +44,8 @@ class DataManager {
             throw ErrorType.unexpectedResponse(urlResponse)
         }
 
-        guard let object = try? JSONDecoder().decode(AuthenticationObject.self, from: data) else {
+        guard let object = try? JSONDecoder().decode(AuthenticationObject.self,
+                                                     from: data) else {
             throw ErrorType.invalidData
         }
 
@@ -97,7 +93,6 @@ class DataManager {
         let credentials = "\(server.loginName):\(server.appPassword)"
         let credentialData = credentials.data(using: .utf8)!
         let base64Credentials = credentialData.base64EncodedString()
-
         let headers = ["Authorization": base64Credentials,
                        "OCS-APIREQUEST": "true"]
 
