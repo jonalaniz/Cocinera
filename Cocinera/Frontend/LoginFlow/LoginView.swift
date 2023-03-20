@@ -47,8 +47,8 @@ class LoginView: UIView {
     let addressField: UITextField = {
         let textField = UITextField()
         textField.textContentType = .URL
-        textField.textColor = .white
-        textField.attributedPlaceholder = NSAttributedString(string: "https://www.example.com", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        textField.textColor = .gray
+        textField.attributedPlaceholder = NSAttributedString(string: "https://www.example.com", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         textField.keyboardType = .URL

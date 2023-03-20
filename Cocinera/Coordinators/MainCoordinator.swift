@@ -16,25 +16,29 @@ class MainCoordinator: Coordinator {
 
     init(splitViewController: UISplitViewController) {
         self.splitViewController = splitViewController
+        let mainNavigationController = UINavigationController(rootViewController: mainViewController)
+        splitViewController.viewControllers = [mainNavigationController]
     }
 
     func start() {
-        splitViewController.viewControllers = [mainViewController]
-
         // Check if server needs to be authenitcated first.
         guard serverManager.authenticated() else {
-            showAuthenitcationView()
+            showAuthenticationView()
             return
         }
 
         // Here we will initalize the cookbook app once we know we are setup
     }
 
-    private func showAuthenitcationView() {
+    private func showAuthenticationView() {
         let child = AuthenicationCoordinator(splitViewController: splitViewController)
         child.parentCoordinator = self
         childCoordinators.append(child)
         child.start()
+    }
+
+    private func showCookbook() {
+        // Will add shit here
     }
 
     func childDidFinish(_ child: Coordinator?) {

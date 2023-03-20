@@ -25,9 +25,12 @@ class AuthenicationCoordinator: Coordinator {
 
     func start() {
         authenticationViewController.coordinator = self
-
+        authenticationViewController.isModalInPresentation = true
+        
         navigationController.viewControllers = [authenticationViewController]
-        splitViewController.present(navigationController, animated: true, completion: nil)
+        splitViewController.present(navigationController,
+                                    animated: true,
+                                    completion: nil)
     }
 
     func openWebView(url: URL) {
@@ -47,6 +50,8 @@ class AuthenicationCoordinator: Coordinator {
 extension AuthenicationCoordinator: NXAuthenticationDelegate {
     func didCapture(server: NXServer) {
         parentCoordinator?.save(server: server)
+        authenticationViewController.dismiss(animated: true)
+        parentCoordinator?.childDidFinish(self)
     }
 
     func didRecieve(loginURL: String) {

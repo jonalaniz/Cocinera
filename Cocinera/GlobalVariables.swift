@@ -7,6 +7,8 @@
 
 import UIKit
 
+let ServerKeyString = "AuthenticatedServer"
+
 /// Struct containing all app colors as UIColors
 struct Colors {
     static let cocineraGreen = UIColor.systemGreen

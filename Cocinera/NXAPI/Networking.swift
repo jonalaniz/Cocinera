@@ -1,5 +1,5 @@
 //
-//  DataManager.swift
+//  Networking.swift
 //  Cocinera
 //
 //  Created by Jon Alaniz on 2/19/23.
@@ -16,7 +16,7 @@ enum ErrorType: Error {
     case invalidData
 }
 
-/// DataManager struct manages pulling json data from URLs
+/// DataManager struct manages networking calls
 class DataManager {
     /// Returns the singleton `DataManager` instance
     public static let shared = DataManager()

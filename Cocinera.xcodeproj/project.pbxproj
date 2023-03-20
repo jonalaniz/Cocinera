@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		56951B28299D33A100C78F04 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56951B27299D33A100C78F04 /* LoginView.swift */; };
+		56AB0F7D29C880FD002F3D97 /* RecipeStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AB0F7C29C880FD002F3D97 /* RecipeStub.swift */; };
+		56AB0F7F29C88108002F3D97 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AB0F7E29C88108002F3D97 /* Recipe.swift */; };
+		56AB0F8129C881F3002F3D97 /* NXRecipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AB0F8029C881F3002F3D97 /* NXRecipeManager.swift */; };
 		56DA1E4F29A2BD870019102C /* NXAuthenitcator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DA1E4E29A2BD870019102C /* NXAuthenitcator.swift */; };
-		56DA1E5229A2CE0E0019102C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DA1E5129A2CE0E0019102C /* DataManager.swift */; };
+		56DA1E5229A2CE0E0019102C /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DA1E5129A2CE0E0019102C /* Networking.swift */; };
 		56DA1E5429A2CE700019102C /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DA1E5329A2CE700019102C /* Endpoints.swift */; };
 		56DA1E5629A2CEEE0019102C /* NXAuthenticationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DA1E5529A2CEEE0019102C /* NXAuthenticationObject.swift */; };
 		56DA1E5829A2D0650019102C /* NXServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DA1E5729A2D0650019102C /* NXServer.swift */; };
@@ -32,8 +35,11 @@
 
 /* Begin PBXFileReference section */
 		56951B27299D33A100C78F04 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		56AB0F7C29C880FD002F3D97 /* RecipeStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStub.swift; sourceTree = "<group>"; };
+		56AB0F7E29C88108002F3D97 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		56AB0F8029C881F3002F3D97 /* NXRecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NXRecipeManager.swift; sourceTree = "<group>"; };
 		56DA1E4E29A2BD870019102C /* NXAuthenitcator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NXAuthenitcator.swift; sourceTree = "<group>"; };
-		56DA1E5129A2CE0E0019102C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		56DA1E5129A2CE0E0019102C /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		56DA1E5329A2CE700019102C /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		56DA1E5529A2CEEE0019102C /* NXAuthenticationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NXAuthenticationObject.swift; sourceTree = "<group>"; };
 		56DA1E5729A2D0650019102C /* NXServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NXServer.swift; sourceTree = "<group>"; };
@@ -76,21 +82,22 @@
 			path = LoginFlow;
 			sourceTree = "<group>";
 		};
-		56DA1E4D29A2BD730019102C /* Backend */ = {
+		56AB0F7B29C880BC002F3D97 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
-				56DA1E5129A2CE0E0019102C /* DataManager.swift */,
-				56DA1E5329A2CE700019102C /* Endpoints.swift */,
-				56DA1E6929A598800019102C /* Keychain */,
 			);
-			path = Backend;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		56DA1E5D29A2F16E0019102C /* NXAPI */ = {
 			isa = PBXGroup;
 			children = (
-				56DA1E7129B2F0150019102C /* Authentication */,
+				56AB0F7B29C880BC002F3D97 /* New Group */,
+				56DA1E5329A2CE700019102C /* Endpoints.swift */,
+				56DA1E5129A2CE0E0019102C /* Networking.swift */,
+				56AB0F8029C881F3002F3D97 /* NXRecipeManager.swift */,
 				56DA1E6F29B2EFFE0019102C /* NXServerManager.swift */,
+				56DA1E7129B2F0150019102C /* Authentication */,
 				56DA1E6C29B2D6580019102C /* Objects */,
 			);
 			path = NXAPI;
@@ -99,6 +106,8 @@
 		56DA1E6429A597030019102C /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
+				56DA1E6A29A6A26A0019102C /* WebViewController.swift */,
+				56DA1E6229A2FB500019102C /* MainViewController.swift */,
 				56951B26299D339100C78F04 /* LoginFlow */,
 			);
 			path = Frontend;
@@ -117,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				56DA1E5729A2D0650019102C /* NXServer.swift */,
+				56AB0F7C29C880FD002F3D97 /* RecipeStub.swift */,
+				56AB0F7E29C88108002F3D97 /* Recipe.swift */,
 				56DA1E5529A2CEEE0019102C /* NXAuthenticationObject.swift */,
 			);
 			path = Objects;
@@ -150,13 +161,11 @@
 		56EB57BE29938AAD00E1495A /* Cocinera */ = {
 			isa = PBXGroup;
 			children = (
-				56EB57D929A04F6900E1495A /* GlobalVariables.swift */,
-				56DA1E5D29A2F16E0019102C /* NXAPI */,
-				56DA1E4D29A2BD730019102C /* Backend */,
-				56DA1E6429A597030019102C /* Frontend */,
 				56EB57D429938B7200E1495A /* Coordinators */,
-				56EB57D329938B6600E1495A /* Protocols */,
-				56DA1E6A29A6A26A0019102C /* WebViewController.swift */,
+				56DA1E6429A597030019102C /* Frontend */,
+				56DA1E5D29A2F16E0019102C /* NXAPI */,
+				56DA1E6929A598800019102C /* Keychain */,
+				56EB57D929A04F6900E1495A /* GlobalVariables.swift */,
 				56EB57BF29938AAD00E1495A /* AppDelegate.swift */,
 				56EB57C129938AAD00E1495A /* SceneDelegate.swift */,
 				56EB57C829938AAE00E1495A /* Assets.xcassets */,
@@ -166,19 +175,11 @@
 			path = Cocinera;
 			sourceTree = "<group>";
 		};
-		56EB57D329938B6600E1495A /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				56EB57D529938C0600E1495A /* Coordinator.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		56EB57D429938B7200E1495A /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				56EB57D529938C0600E1495A /* Coordinator.swift */,
 				56EB57D729938C4E00E1495A /* MainCoordinator.swift */,
-				56DA1E6229A2FB500019102C /* MainViewController.swift */,
 				56DA1E5929A2D56B0019102C /* AuthenitcationCoordinator.swift */,
 			);
 			path = Coordinators;
@@ -263,14 +264,17 @@
 				56DA1E7029B2EFFE0019102C /* NXServerManager.swift in Sources */,
 				56DA1E5429A2CE700019102C /* Endpoints.swift in Sources */,
 				56EB57C029938AAD00E1495A /* AppDelegate.swift in Sources */,
+				56AB0F7F29C88108002F3D97 /* Recipe.swift in Sources */,
 				56EB57DA29A04F6900E1495A /* GlobalVariables.swift in Sources */,
+				56AB0F8129C881F3002F3D97 /* NXRecipeManager.swift in Sources */,
 				56DA1E6829A598710019102C /* KeychainWrapper.swift in Sources */,
 				56DA1E6629A598680019102C /* KeychainOptions.swift in Sources */,
 				56DA1E5C29A2EFC70019102C /* NXAuthenticationDelegate.swift in Sources */,
+				56AB0F7D29C880FD002F3D97 /* RecipeStub.swift in Sources */,
 				56DA1E6329A2FB500019102C /* MainViewController.swift in Sources */,
 				56EB57D829938C4E00E1495A /* MainCoordinator.swift in Sources */,
 				56DA1E5629A2CEEE0019102C /* NXAuthenticationObject.swift in Sources */,
-				56DA1E5229A2CE0E0019102C /* DataManager.swift in Sources */,
+				56DA1E5229A2CE0E0019102C /* Networking.swift in Sources */,
 				56DA1E5829A2D0650019102C /* NXServer.swift in Sources */,
 				56EB57C229938AAD00E1495A /* SceneDelegate.swift in Sources */,
 			);

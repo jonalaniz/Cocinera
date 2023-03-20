@@ -54,11 +54,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
         // Initialize a SplitViewControlelr and Coordinator
         let splitViewController = UISplitViewController()
         coordinator = MainCoordinator(splitViewController: splitViewController)
+
         // Setup our SplitViewController
         splitViewController.preferredDisplayMode = UISplitViewController.DisplayMode.oneBesideSecondary
         splitViewController.primaryBackgroundStyle = .sidebar
         splitViewController.delegate = self
-
 
         // Set the window to the SplitViewController
         window.rootViewController = splitViewController
