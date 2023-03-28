@@ -58,7 +58,7 @@ extension AuthenicationCoordinator: NXAuthenticationDelegate {
         openWebView(url: URL(string: loginURL)!)
     }
 
-    func failedToGetCredentials(withError error: ServerManagerAuthenticationError) {
+    func failedToGetCredentials(withError error: NXNetworkError) {
         let statusLabel = authenticationViewController.loginView.statusLabel
 
         switch error {

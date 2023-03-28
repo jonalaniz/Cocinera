@@ -8,7 +8,7 @@
 import Foundation
 
 /// String descriptions for various authentication errors.
-enum ServerManagerAuthenticationError: Int {
+enum NXNetworkError: Int {
     case notValidHost
     case serverNotFound
     case failedToSerializeResponse
@@ -33,7 +33,7 @@ protocol NXAuthenticationDelegate: AnyObject {
     func didRecieve(loginURL: String)
 
     /// Called when ServerManager is unable to get authorization data from server. Returns error information.
-    func failedToGetCredentials(withError error: ServerManagerAuthenticationError)
+    func failedToGetCredentials(withError error: NXNetworkError)
 
     /// Called when networkManager finds network error, passes localized description.
     func networkError(error: ErrorType)

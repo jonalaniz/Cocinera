@@ -82,22 +82,22 @@
 			path = LoginFlow;
 			sourceTree = "<group>";
 		};
-		56AB0F7B29C880BC002F3D97 /* New Group */ = {
+		56AB0F7B29C880BC002F3D97 /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
+				56AB0F8029C881F3002F3D97 /* NXRecipeManager.swift */,
 			);
-			path = "New Group";
+			path = Recipes;
 			sourceTree = "<group>";
 		};
 		56DA1E5D29A2F16E0019102C /* NXAPI */ = {
 			isa = PBXGroup;
 			children = (
-				56AB0F7B29C880BC002F3D97 /* New Group */,
 				56DA1E5329A2CE700019102C /* Endpoints.swift */,
 				56DA1E5129A2CE0E0019102C /* Networking.swift */,
-				56AB0F8029C881F3002F3D97 /* NXRecipeManager.swift */,
 				56DA1E6F29B2EFFE0019102C /* NXServerManager.swift */,
 				56DA1E7129B2F0150019102C /* Authentication */,
+				56AB0F7B29C880BC002F3D97 /* Recipes */,
 				56DA1E6C29B2D6580019102C /* Objects */,
 			);
 			path = NXAPI;
