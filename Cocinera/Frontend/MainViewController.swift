@@ -11,7 +11,7 @@ class MainViewController: UIViewController {
     let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(named: "back")
+        imageView.image = UIImage(named: "back2")
 
         return imageView
     }()

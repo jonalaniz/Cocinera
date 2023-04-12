@@ -26,6 +26,7 @@ class NXServerManager: NSObject {
         else { return }
 
         server = decodedServer
+        print(server)
     }
 
     func save(server: NXServer) {

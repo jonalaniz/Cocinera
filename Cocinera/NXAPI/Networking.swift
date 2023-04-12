@@ -94,7 +94,8 @@ class DataManager {
         let credentialData = credentials.data(using: .utf8)!
         let base64Credentials = credentialData.base64EncodedString()
         let headers = ["Authorization": base64Credentials,
-                       "OCS-APIREQUEST": "true"]
+                       "OCS-APIREQUEST": "true",
+                       "Accept": "application/json"]
 
         return headers
     }

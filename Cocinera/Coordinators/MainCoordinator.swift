@@ -22,12 +22,13 @@ class MainCoordinator: Coordinator {
 
     func start() {
         // Check if server needs to be authenitcated first.
-        guard serverManager.authenticated() else {
-            showAuthenticationView()
-            return
-        }
+//        guard serverManager.authenticated() else {
+//            showAuthenticationView()
+//            return
+//        }
 
         // Here we will initalize the cookbook app once we know we are setup
+        let recipeManager = NXRecipeManager.shared
     }
 
     private func showAuthenticationView() {
