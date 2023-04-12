@@ -85,29 +85,6 @@ class NXAuthenticator: NSObject {
             }
         }
     }
-
-    /// Sends an HTTP DELETE request to specificed server, clearing app specific password
-    /// and deauthorizing NextStats
-    // TODO: Add completion handler to return an error if one is found,
-    // Error should be generic and handler will just ask user to check
-    // their server to remove the app password manually.
-    static func deauthorize(server: NXServer) async throws {
-        // Create the URL components and append correct path
-        var components = URLComponents(string: server.server)!
-        components.path += Endpoints.appPassword.rawValue
-
-        // Configure headers
-        let config = URLSessionConfiguration.default
-        config.httpAdditionalHeaders = DataManager.headers(for: server)
-
-        // Configure HTTP Request
-        var request = URLRequest(url: components.url!)
-        request.httpMethod = "DELETE"
-
-        let session = URLSession(configuration: config)
-
-        let (_, _) = try await session.data(for: request)
-    }
 }
 
 // MARK: Helper Functions

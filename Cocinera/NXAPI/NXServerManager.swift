@@ -26,7 +26,6 @@ class NXServerManager: NSObject {
         else { return }
 
         server = decodedServer
-        print(server)
     }
 
     func save(server: NXServer) {
@@ -46,5 +45,39 @@ class NXServerManager: NSObject {
 
     func authenticated() -> Bool {
         return server != nil
+    }
+    
+    func deauthorize(server: NXServer) async throws {
+        // Create the URL components and append correct path
+        var components = URLComponents(string: server.server)!
+        components.path += Endpoints.appPassword.rawValue
+
+        // Configure headers
+        let config = URLSessionConfiguration.default
+        config.httpAdditionalHeaders = headers()
+
+        // Configure HTTP Request
+        var request = URLRequest(url: components.url!)
+        request.httpMethod = "DELETE"
+
+        let session = URLSession(configuration: config)
+
+        let (_, _) = try await session.data(for: request)
+    }
+    
+    func headers() -> [String: String]? {
+        guard
+            let loginName = server?.loginName,
+            let appPassword = server?.appPassword
+        else { return nil }
+        
+        let credentials = "\(loginName):\(appPassword)"
+        let credentialData = credentials.data(using: .utf8)!
+        let base64Credentials = credentialData.base64EncodedString()
+        let headers = ["Authorization": base64Credentials,
+                       "OCS-APIREQUEST": "true",
+                       "Accept": "application/json"]
+
+        return headers
     }
 }

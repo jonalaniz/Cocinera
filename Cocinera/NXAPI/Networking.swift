@@ -31,7 +31,7 @@ class DataManager {
         request.httpMethod = "POST"
         request.setUserAgent()
 
-        let config = DataManager.config()
+        let config = config()
         let session = URLSession(configuration: config)
 
         let (data, response) = try await session.data(for: request)
@@ -59,7 +59,7 @@ class DataManager {
         request.httpBody = (tokenPrefix + token).data(using: .utf8)
         request.setUserAgent()
 
-        let config = DataManager.config()
+        let config = config()
         let session = URLSession(configuration: config)
 
         let (data, response) = try await session.data(for: request)
@@ -79,7 +79,7 @@ class DataManager {
         return server
     }
 
-    static func config() -> URLSessionConfiguration {
+    func config() -> URLSessionConfiguration {
         let config = URLSessionConfiguration.default
         config.allowsCellularAccess = true
         config.timeoutIntervalForRequest = 15
@@ -87,17 +87,6 @@ class DataManager {
         config.httpMaximumConnectionsPerHost = 1
 
         return config
-    }
-
-    static func headers(for server: NXServer) -> [String: String] {
-        let credentials = "\(server.loginName):\(server.appPassword)"
-        let credentialData = credentials.data(using: .utf8)!
-        let base64Credentials = credentialData.base64EncodedString()
-        let headers = ["Authorization": base64Credentials,
-                       "OCS-APIREQUEST": "true",
-                       "Accept": "application/json"]
-
-        return headers
     }
 }
 
